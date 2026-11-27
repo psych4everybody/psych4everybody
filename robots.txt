@@ -1,2 +1,4 @@
 User-agent: *
-Disallow: /
+Allow: /
+
+Sitemap: https://psych4everybody.github.io/psych4everybody/sitemap.xml
