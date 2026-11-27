@@ -149,3 +149,7 @@ html[data-theme="dark"] .tried-btn[aria-pressed="true"]{background:var(--rust);}
 @media print{.tried-btn{display:none;}}
 html[data-theme="dark"] .study dt,html[data-theme="dark"] .why b:first-child,html[data-theme="dark"] .check-q.predict .claim::before{color:#A9C0CF;}
 html[data-theme="dark"] .study dt.cant{color:var(--rust-dark);}
+
+/* Hub: list of deep dives under a unit card */
+.unit-card .deep-list{margin-top:12px;font-size:.92rem;color:var(--muted);line-height:1.8;}
+.unit-card .deep-list a{font-weight:700;color:var(--rust-dark);}
