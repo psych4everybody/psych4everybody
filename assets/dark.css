@@ -1,0 +1,38 @@
+/* Dark theme for the Intro to Psychology site. Only applies when settings.js sets
+   data-theme="dark". Solid fills behind all text, warm off-white text on dark slate,
+   and the same slate and rust accents as the light theme. */
+html[data-theme="dark"]{
+  color-scheme:dark;
+  --paper:#1a1e22; --paper-2:#22282d; --sand:#353c41; --sand-2:#3f474d; --mist:#33434b;
+  --concrete:#7d8a8c; --slate:#5E7584; --slate-dark:#44586A;
+  --ink:#ebe6dd; --muted:#bdb6aa;
+  --rust:#A2532F; --rust-dark:#e59d76; --rust-pale:#3a2a22;
+  --ok:#c3e3b4; --ok-bg:#26351f; --ok-line:#6f9a5f;
+  --no:#f5bba5; --no-bg:#3d2219; --no-line:#c46a47;
+  --shadow:0 1px 0 rgba(0,0,0,.25),0 6px 18px rgba(0,0,0,.25);
+  --card:#262d33;
+}
+
+/* Everything that was a white box becomes a dark card */
+html[data-theme="dark"] .controls select,html[data-theme="dark"] .btn-ghost,html[data-theme="dark"] .mode-card,
+html[data-theme="dark"] .quote,html[data-theme="dark"] .opt,html[data-theme="dark"] .why,html[data-theme="dark"] .fc-back,
+html[data-theme="dark"] .m-def,html[data-theme="dark"] .hm-hint,html[data-theme="dark"] .mistake,html[data-theme="dark"] .rev,
+html[data-theme="dark"] .notes table,html[data-theme="dark"] .callout,html[data-theme="dark"] .check-q,
+html[data-theme="dark"] .sec-tabs a,html[data-theme="dark"] .next-sec a,html[data-theme="dark"] .tm-rules,
+html[data-theme="dark"] .tm-field,html[data-theme="dark"] .tm-cell,html[data-theme="dark"] .tm-facts span{background:var(--card);}
+
+/* Hovers that used the dark ink as a background now use the light ink with dark text */
+html[data-theme="dark"] .btn-ghost:hover,html[data-theme="dark"] .unit-card .links a:hover,
+html[data-theme="dark"] .back-link:hover{background:var(--ink);border-color:var(--ink);color:#1a1e22;}
+html[data-theme="dark"] .btn-primary:hover,html[data-theme="dark"] .unit-card .links a.primary:hover{background:#b8613a;color:#fff;}
+html[data-theme="dark"] .test-yourself button:hover{color:#1a1e22;}
+
+/* Header stays slate; the content panels get a slightly deeper slate for contrast */
+html[data-theme="dark"] .site-header{background:#3f5260;}
+html[data-theme="dark"] .test-yourself,html[data-theme="dark"] .tm-bar{background:#3f5260;}
+html[data-theme="dark"] .fc-front,html[data-theme="dark"] .m-term,html[data-theme="dark"] .hm-key,
+html[data-theme="dark"] .badge.sec,html[data-theme="dark"] .notes th{background:#4a6170;}
+html[data-theme="dark"] .m-term.placed{background:var(--sand);color:var(--ink);}
+html[data-theme="dark"] .tm-overlay{background:rgba(8,10,12,.78);}
+
+@media print{html[data-theme="dark"]{color-scheme:light}}

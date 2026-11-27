@@ -1,0 +1,61 @@
+/* Psych4Everybody additions on top of the shared Intro to Psychology styles:
+   evidence labels, myth cards, research hook, reflection prompts, sources, and hub cards. */
+
+/* ---------- Header motif: two overlapping speech bubbles ---------- */
+.site-header .bubbles{position:absolute;right:0;bottom:0;height:100%;width:min(46%,420px);z-index:0;}
+
+/* ---------- Evidence labels ---------- */
+.ev{display:inline-block;font-size:.72rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;
+  padding:2px 9px;border-radius:999px;vertical-align:middle;margin-left:8px;border:1px solid transparent;white-space:nowrap;}
+.ev.strong{background:var(--ok-bg);color:var(--ok);border-color:var(--ok-line);}
+.ev.mixed{background:#F6EBC9;color:#5C4610;border-color:#B8952E;}
+.ev.contested{background:var(--no-bg);color:var(--no);border-color:var(--no-line);}
+.ev-legend{display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center;font-size:.92rem;color:var(--muted);}
+.ev-legend .ev{margin-left:0;margin-right:6px;}
+.ev-note{font-size:.9rem;color:var(--muted);margin-top:8px;}
+
+/* ---------- "What people bring" research hook ---------- */
+.hook{background:var(--ink);color:#fff;border-radius:var(--radius);padding:18px 20px;margin-bottom:16px;}
+.hook h3{font-family:'Fraunces',Georgia,serif;font-weight:600;font-size:1.15rem;margin-bottom:6px;color:#fff;}
+.hook p{color:#E6ECEF;}
+.hook .big{font-family:'Fraunces',Georgia,serif;font-size:2.2rem;line-height:1;color:#F3C9B3;margin-right:6px;}
+.hook .src{font-size:.82rem;color:#C9D3D8;margin-top:8px;}
+
+/* ---------- Myth or evidence? cards (reuse the .check-q reveal) ---------- */
+.myths{display:grid;gap:12px;}
+.check-q.myth{border-left:6px solid var(--rust);}
+.check-q.myth .claim{font-family:'Fraunces',Georgia,serif;font-weight:600;font-size:1.05rem;}
+.check-q.myth .claim::before{content:"Popular claim";display:block;font-family:'Atkinson Hyperlegible',system-ui,sans-serif;
+  font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--rust-dark);margin-bottom:4px;}
+
+/* ---------- Reflection prompts ---------- */
+.reflect{background:var(--paper-2);border:1px dashed var(--slate);border-radius:var(--radius);padding:16px 18px;margin-bottom:16px;}
+.reflect h3{font-family:'Fraunces',Georgia,serif;font-weight:600;font-size:1.1rem;margin-bottom:6px;}
+.reflect ul{margin:6px 0 0 20px;}
+.reflect li{margin:4px 0;}
+.reflect .small{font-size:.88rem;color:var(--muted);margin-top:8px;}
+
+/* ---------- Safety card ---------- */
+.safety{background:#fff;border:2px solid var(--no-line);border-radius:var(--radius);padding:16px 18px;margin-bottom:16px;}
+.safety h3{color:var(--no);}
+
+/* ---------- Sources ---------- */
+details.sources{font-size:.9rem;color:var(--muted);}
+details.sources summary{cursor:pointer;font-weight:700;color:var(--ink);}
+details.sources ul{margin:8px 0 0 20px;}
+details.sources li{margin:4px 0;}
+
+/* ---------- Hub ---------- */
+.unit-card.soon{opacity:.85;}
+.unit-card.soon h2{color:var(--muted);}
+.soon-tag{display:inline-block;font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
+  background:var(--sand);color:var(--muted);padding:2px 10px;border-radius:999px;margin-left:8px;vertical-align:middle;}
+.unit-card .q-line{font-style:italic;color:var(--muted);margin:-2px 0 8px;}
+
+/* ---------- Dark theme ---------- */
+html[data-theme="dark"] .ev.strong{background:#22341F;color:#CFE3C3;border-color:#5C7A50;}
+html[data-theme="dark"] .ev.mixed{background:#3A3115;color:#F1DE9E;border-color:#8C7429;}
+html[data-theme="dark"] .ev.contested{background:#3E2118;color:#F2C7B6;border-color:#9A5034;}
+html[data-theme="dark"] .reflect,html[data-theme="dark"] .safety{background:#1F2830;}
+html[data-theme="dark"] .hook{background:#101820;}
+.safety p+p,.hook p+p{margin-top:8px;}
