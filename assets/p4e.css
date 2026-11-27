@@ -59,3 +59,93 @@ html[data-theme="dark"] .ev.contested{background:#3E2118;color:#F2C7B6;border-co
 html[data-theme="dark"] .reflect,html[data-theme="dark"] .safety{background:#1F2830;}
 html[data-theme="dark"] .hook{background:#101820;}
 .safety p+p,.hook p+p{margin-top:8px;}
+
+/* =====================================================================
+   Lesson template components (deep-dive pages).
+   Standfirst, key points, predict-first opener, "instead of / try" scripts,
+   study box, practice card, therapy-speak decoder, and "mark as tried".
+   ===================================================================== */
+.site-header .dek{font-size:1.06rem;color:#E6ECEF;max-width:560px;margin-top:6px;}
+
+/* Key points: numbered, bold lead-in, one or two sentences each */
+.keypoints{counter-reset:kp;list-style:none;margin:4px 0 0;}
+.keypoints li{counter-increment:kp;position:relative;padding-left:40px;margin-bottom:10px;}
+.keypoints li::before{content:counter(kp);position:absolute;left:0;top:0;width:27px;height:27px;border-radius:50%;
+  background:var(--rust);color:#fff;font-weight:700;font-size:.9rem;display:flex;align-items:center;justify-content:center;}
+.keypoints li b{color:var(--ink);}
+
+/* Predict-first opener (reuses the .check-q reveal) */
+.check-q.predict{border-left:6px solid var(--slate);}
+.check-q.predict .claim{font-family:'Fraunces',Georgia,serif;font-weight:600;font-size:1.05rem;}
+.check-q.predict .claim::before{content:"Predict first";display:block;font-family:'Atkinson Hyperlegible',system-ui,sans-serif;
+  font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--slate-dark);margin-bottom:4px;}
+
+/* "Instead of / Try" scripts */
+.script{display:grid;gap:8px;margin:10px 0 12px;}
+.script .line{border-radius:10px;padding:11px 14px 11px 14px;border:1px solid var(--sand-2);background:#fff;}
+.script .line .lbl{display:block;font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;margin-bottom:3px;}
+.script .instead{border-left:6px solid var(--no-line);}
+.script .instead .lbl{color:var(--no);}
+.script .try{border-left:6px solid var(--ok-line);}
+.script .try .lbl{color:var(--ok);}
+.why{font-size:.96rem;}
+.why b:first-child{color:var(--slate-dark);}
+
+/* Study box: What they did / What they found / What it can't tell us */
+.study{border:2px solid var(--slate);border-radius:var(--radius);overflow:hidden;margin-bottom:16px;background:var(--paper-2);box-shadow:var(--shadow);}
+.study .study-head{background:var(--slate);color:#fff;padding:12px 20px;}
+.study .study-head .kicker{font-size:.74rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#E6ECEF;}
+.study .study-head h3{font-family:'Fraunces',Georgia,serif;font-weight:600;font-size:1.2rem;color:#fff;margin:2px 0 0;}
+.study .study-body{padding:16px 20px;}
+.study dl{display:grid;grid-template-columns:170px 1fr;gap:12px 16px;}
+.study dt{font-weight:700;color:var(--slate-dark);}
+.study dd p+p,.study dd ul{margin-top:6px;}
+.study dd ul{margin-left:20px;}
+.study dt.cant{color:var(--rust-dark);}
+@media(max-width:560px){.study dl{grid-template-columns:1fr;gap:4px;}.study dd{margin-bottom:10px;}}
+
+/* Practice card */
+.practice{background:#fff;border:2px solid var(--rust);border-radius:var(--radius);padding:20px 22px;margin-bottom:16px;box-shadow:var(--shadow);}
+.practice .kicker{font-size:.74rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--rust-dark);}
+.practice h3{font-family:'Fraunces',Georgia,serif;font-weight:600;font-size:1.3rem;margin:2px 0 6px;}
+.practice .meta{display:flex;flex-wrap:wrap;gap:8px;margin:6px 0 12px;}
+.practice .meta span{font-size:.85rem;font-weight:700;background:var(--rust-pale);color:var(--rust-dark);padding:3px 11px;border-radius:999px;}
+.practice h4{font-size:1.02rem;margin:14px 0 6px;}
+.practice ol.do{margin:4px 0 6px 22px;}
+.practice ol.do li{margin-bottom:7px;}
+.practice .keep{background:var(--paper-2);border-left:6px solid var(--slate);border-radius:0 10px 10px 0;padding:11px 14px;margin-top:12px;}
+.tried-btn{margin-top:14px;background:var(--paper);border:2px solid var(--rust);color:var(--ink);font-weight:700;border-radius:999px;padding:7px 16px;cursor:pointer;}
+.tried-btn:hover{background:var(--rust-pale);}
+.tried-btn[aria-pressed="true"]{background:var(--rust);color:#fff;}
+.tried-btn[aria-pressed="true"]::before{content:"\2713  ";}
+
+/* Therapy-speak decoder */
+.decoder{display:grid;gap:12px;}
+.decode{border:1px solid var(--sand-2);border-radius:12px;background:#fff;overflow:hidden;}
+.decode .phrase{font-family:'Fraunces',Georgia,serif;font-weight:600;font-size:1.05rem;padding:11px 16px;background:var(--sand);}
+.decode .cols{display:grid;grid-template-columns:1fr 1fr;}
+.decode .cols div{padding:11px 16px;font-size:.96rem;}
+.decode .cols div+div{border-left:1px solid var(--sand-2);}
+.decode .cols .lbl{display:block;font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:3px;}
+.decode .cols .research .lbl{color:var(--ok);}
+@media(max-width:560px){.decode .cols{grid-template-columns:1fr;}.decode .cols div+div{border-left:0;border-top:1px solid var(--sand-2);}}
+
+/* "Go deeper" link card on unit pages */
+.deeper{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;background:var(--rust-pale);
+  border:1px solid var(--rust);border-radius:12px;padding:12px 16px;margin-top:12px;}
+.deeper a{font-weight:700;color:var(--rust-dark);}
+
+/* Dark theme for the template components */
+html[data-theme="dark"] .script .line,html[data-theme="dark"] .practice,html[data-theme="dark"] .decode{background:var(--card);}
+html[data-theme="dark"] .study{background:var(--paper-2);}
+html[data-theme="dark"] .study .study-head{background:#3f5260;}
+html[data-theme="dark"] .decode .phrase{background:var(--sand);}
+html[data-theme="dark"] .practice .keep{background:#1F2830;}
+html[data-theme="dark"] .practice .meta span{background:#3a2a22;color:#F3C9B3;}
+html[data-theme="dark"] .deeper{background:#3a2a22;}
+html[data-theme="dark"] .deeper a{color:#F3C9B3;}
+html[data-theme="dark"] .tried-btn{background:var(--card);}
+html[data-theme="dark"] .tried-btn[aria-pressed="true"]{background:var(--rust);}
+@media print{.tried-btn{display:none;}}
+html[data-theme="dark"] .study dt,html[data-theme="dark"] .why b:first-child,html[data-theme="dark"] .check-q.predict .claim::before{color:#A9C0CF;}
+html[data-theme="dark"] .study dt.cant{color:var(--rust-dark);}

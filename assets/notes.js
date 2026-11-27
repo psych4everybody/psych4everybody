@@ -36,6 +36,13 @@ function setup(){
       cb.addEventListener("change",function(){saved[i]=cb.checked;store.set(key,JSON.stringify(saved));});
     });
   });
+  /* "Mark as tried" buttons on practice cards, saved in this browser only */
+  $$(".tried-btn[data-tried]").forEach(function(b){
+    var key="p4e:tried:"+b.dataset.tried,base=b.textContent;
+    function draw(on){b.setAttribute("aria-pressed",String(on));b.textContent=on?"Tried it":base;}
+    draw(store.get(key)==="1");
+    b.addEventListener("click",function(){var on=b.getAttribute("aria-pressed")!=="true";store.set(key,on?"1":"0");draw(on);});
+  });
   /* quiz buttons inside notes */
   $$("[data-quiz]").forEach(function(b){
     b.addEventListener("click",function(){
